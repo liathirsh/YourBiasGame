@@ -1,0 +1,85 @@
+{
+    "test": [
+      {
+        "question": "You believe that eating a specific diet is the healthiest option and frequently search for studies or articles that confirm your choice, while ignoring or dismissing articles that critique or offer alternative views. What bias is this?",
+        "choices": [
+          "Sunk Cost Fallacy",
+          "Confirmation Bias",
+          "Availability Heuristic",
+          "Anchoring Bias"
+        ],
+        "answer": "Confirmation Bias",
+        "explanation": "This is an example of Confirmation Bias, where someone searches for or interprets information that supports their pre-existing beliefs while ignoring evidence that contradicts it.",
+        "wrong_explanations": {
+          "Sunk Cost Fallacy": "This involves continuing with a decision due to previous investments, even when it’s irrational.",
+          "Availability Heuristic": "This refers to making decisions based on information that’s most readily available or memorable, not necessarily the best evidence.",
+          "Anchoring Bias": "This occurs when someone relies too heavily on the first piece of information they receive."
+        }
+      },
+      {
+        "question": "A friend tells you they just bought stock in a tech company that hasn’t been doing well. When you ask why, they say, 'I’ve already invested too much money to back out now.' What bias are they displaying?",
+        "choices": [
+          "Optimism Bias",
+          "Sunk Cost Fallacy",
+          "Hindsight Bias",
+          "Confirmation Bias"
+        ],
+        "answer": "Sunk Cost Fallacy",
+        "explanation": "The friend is making decisions based on the past investment, even though it may be smarter to cut their losses, which is classic Sunk Cost Fallacy.",
+        "wrong_explanations": {
+          "Optimism Bias": "This refers to someone believing they’re less likely to experience negative outcomes.",
+          "Hindsight Bias": "This is when someone believes an event was predictable after it happens.",
+          "Confirmation Bias": "This is about selectively gathering information to confirm beliefs."
+        }
+      },
+      {
+        "question": "You meet someone at a job interview, and they mention they went to Harvard. Later, you rate them highly, despite them providing few examples of relevant experience. What bias is influencing your judgment?",
+        "choices": [
+          "Anchoring Bias",
+          "Availability Heuristic",
+          "Bandwagon Effect",
+          "Sunk Cost Fallacy"
+        ],
+        "answer": "Anchoring Bias",
+        "explanation": "You’ve let the fact that the person went to Harvard (the initial information) disproportionately affect your judgment of their skills, which is Anchoring Bias.",
+        "wrong_explanations": {
+          "Availability Heuristic": "This deals with decisions made based on readily available examples, usually emotionally charged or recent ones.",
+          "Bandwagon Effect": "This occurs when people adopt beliefs because many others hold those beliefs.",
+          "Sunk Cost Fallacy": "This relates to sticking with decisions due to prior investment, which is irrelevant here."
+        }
+      },
+      {
+        "question": "After hearing several stories about plane crashes on the news, you decide to drive instead of fly, even though flying is statistically much safer. What bias is this?",
+        "choices": [
+          "Availability Heuristic",
+          "Hindsight Bias",
+          "Confirmation Bias",
+          "Optimism Bias"
+        ],
+        "answer": "Availability Heuristic",
+        "explanation": "The Availability Heuristic occurs when people judge the likelihood of an event based on how easily examples come to mind, such as dramatic plane crash stories, rather than actual statistics.",
+        "wrong_explanations": {
+          "Hindsight Bias": "This is about believing something was predictable after it happens.",
+          "Confirmation Bias": "This involves seeking out information that supports an existing belief.",
+          "Optimism Bias": "This is when someone believes they’re less likely to experience negative events."
+        }
+      },
+      {
+        "question": "After a football game, you claim that you knew your team was going to lose all along, even though you expressed confidence beforehand that they would win. What bias is at play here?",
+        "choices": [
+          "Hindsight Bias",
+          "Sunk Cost Fallacy",
+          "Confirmation Bias",
+          "Bandwagon Effect"
+        ],
+        "answer": "Hindsight Bias",
+        "explanation": "Hindsight Bias occurs when people claim they 'knew it all along' after an event has happened, even if they didn’t predict it beforehand.",
+        "wrong_explanations": {
+          "Sunk Cost Fallacy": "This involves continuing a course of action due to previous investments.",
+          "Confirmation Bias": "This is about selectively gathering information that confirms pre-existing beliefs.",
+          "Bandwagon Effect": "This refers to adopting beliefs or behaviors because others are doing so."
+        }
+      }
+    ]
+  }
+  
