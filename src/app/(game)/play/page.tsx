@@ -3,19 +3,18 @@
 import { useState } from "react";
 import ChoiceGrid from "../_components/choiceGrid";
 import QuestionBox from "../_components/questionbox";
-import { Button } from "@/components/ui/button";
 import data from "../_data/data.json";
 
 const Play = () => {
     const [isCorrect, setIsCorrect] = useState<boolean | null>(null)
+    const [selectedChoice, setSelectedChoice] = useState<string | null>(null);
 
     const handleClick = (choice: string) => {
+        setSelectedChoice(choice);
         if (choice === data.test[0].answer) {
             setIsCorrect(true);
-            alert("Correct!");
         } else {
             setIsCorrect(false);
-            alert("Incorrect!");
         }
     };
 
@@ -27,8 +26,10 @@ const Play = () => {
             <div>
                 <ChoiceGrid 
                     choices={data.test[0].choices}
+                    correctAnswer={data.test[0].answer}
                     handleClick={handleClick}
                     isCorrect={isCorrect}
+                    selectedChoice={selectedChoice}
                 />
             </div>
         </div>
