@@ -2,10 +2,10 @@
 export interface StepInterface {
     name: string;
     href: string;
-    status: string;
+    status: 'complete' | 'current' | 'upcoming' | 'incorrect';
   }
 
-export const Steps: Step[] = [
+export const Steps = [
     { name: 'Step 1', href: '#', status: 'current' },
     { name: 'Step 2', href: '#', status: 'upcoming' },
     { name: 'Step 3', href: '#', status: 'upcoming' },

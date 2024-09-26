@@ -6,15 +6,12 @@ interface Step {
   status: 'complete' | 'current' | 'upcoming' | 'incorrect'
 }  
 
-interface ProgressCirclesProps {
-  steps: Step[]
-}
 
-function classNames(...classes: Array<string | false | null | undefined>):string {
+function classNames(...classes: Array<string | false | null | undefined>): string {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function ProgressCircles({ steps }: ProgressCirclesProps) {
+export default function ProgressCircles({ steps }: {steps: Step[] }) {
   return (
     <nav aria-label="Progress">
       <ol role="list" className="flex items-center">
