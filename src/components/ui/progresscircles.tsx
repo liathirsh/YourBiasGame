@@ -1,27 +1,20 @@
 import { CheckIcon } from '@heroicons/react/20/solid'
-
+  
 interface Step {
-    name: string
-    href: string
-    status: 'complete' | 'current' | 'upcoming' | 'incorrect'
-  }  
+  name: string
+  href: string
+  status: 'complete' | 'current' | 'upcoming' | 'incorrect'
+}  
 
-const steps: Step[] = [
-  { name: 'Step 1', href: '#', status: 'complete' },
-  { name: 'Step 2', href: '#', status: 'incorrect' },
-  { name: 'Step 3', href: '#', status: 'current' },
-  { name: 'Step 4', href: '#', status: 'upcoming' },
-  { name: 'Step 5', href: '#', status: 'upcoming' },
-  { name: 'Step 6', href: '#', status: 'upcoming' },
-  { name: 'Step 7', href: '#', status: 'upcoming' },
-  { name: 'Step 8', href: '#', status: 'upcoming' },
-]
+interface ProgressCirclesProps {
+  steps: Step[]
+}
 
 function classNames(...classes: Array<string | false | null | undefined>):string {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function ProgressCircles() {
+export default function ProgressCircles({ steps }: ProgressCirclesProps) {
   return (
     <nav aria-label="Progress">
       <ol role="list" className="flex items-center">
