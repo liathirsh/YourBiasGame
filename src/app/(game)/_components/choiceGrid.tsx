@@ -14,7 +14,7 @@ interface ChoiceGridProps {
 const ChoiceGrid = ({ choices, handleClick, isCorrect, correctAnswer, selectedChoice } : ChoiceGridProps) => {
     
     return (
-        <div className="grid grid-cols-2 gap-8 mt-4">
+        <div className="grid grid-cols-2 gap-8 mt-4 h-full w-[400px]">
             {data.test[0].choices.slice(0, 4).map((choice, index:number) => (
                 <button
                     key={index}

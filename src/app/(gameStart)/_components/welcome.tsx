@@ -15,7 +15,7 @@ const Welcome = ({ showIntroPage, setShowIntroPage} : WelcomeProps) => {
     }
 
     return (
-            <Card className="border-0 w-full h-full p-8">
+            <Card className="border-0 h-full w-full p-8">
                 <CardHeader className="w-full px-0 pt-0">
                     Welcome to Bias Busters!
                 </CardHeader>

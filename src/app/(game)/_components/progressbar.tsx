@@ -1,13 +1,7 @@
 
 import  ProgressCircles  from "@/components/ui/progresscircles"
 
-
-export interface StepInterface {
-    name: string;
-    href: string;
-    status: 'complete' | 'current' | 'upcoming' | 'incorrect'
-}
-
+import { StepInterface } from "@/types/steps"
 
 interface ProgressBarProps {
     currentStep: number;
@@ -15,14 +9,13 @@ interface ProgressBarProps {
     isCorrect: boolean | null;
 }
 
-export const ProgressBar = ({ currentStep, steps, isCorrect }: ProgressBarProps ) => {
+export const ProgressBar = ({ currentStep, steps }: ProgressBarProps ) => {
     const updatedSteps: StepInterface[] = steps.map((step, index) => {
-        if (index < currentStep) return {...step, status: "complete"};
+        if (index < currentStep) return step;
         if (index === currentStep) {
-            if (isCorrect === false) return {...step, status: "incorrect"};
-            return {...step, status: "current"};
+            return { ...step, status: "current"}
         }
-        return { ...step, status: "upcoming" };
+        return { ...step, status: "upcoming"}
     }); 
 
     return (
