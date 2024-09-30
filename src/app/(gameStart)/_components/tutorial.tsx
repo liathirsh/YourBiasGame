@@ -15,6 +15,9 @@ export const Tutorial = () => {
                 You will be given a situation and you will have to choose the bias that represents the situation. 
                 Think you have what it takes to be a Bias Buster?
             </CardDescription>
+            <CardDescription>
+                After you answer the question, click on the card to understand more about the bias.
+            </CardDescription>
             <></>
             <div className= "flex justify-center">
                 <Link href="/play">

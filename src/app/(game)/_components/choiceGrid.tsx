@@ -1,24 +1,37 @@
+"use client"
 
-import data from "../_data/data.json";
 import ChoiceBox from "./choicebox";
+import data from "../_data/data.json";
+
 
 interface ChoiceGridProps {
     choices: string[];
-    isCorrect: boolean | null;
     correctAnswer: string;
     selectedChoice: string | null;
-    handleClick: (choice: string) => void;
+    handleClick: (choice: string, index: number) => void;
+    flippedStates: boolean[];
+    isCorrect: boolean | null;
+    currentStep: number;
 };
 
 
-const ChoiceGrid = ({ choices, handleClick, isCorrect, correctAnswer, selectedChoice } : ChoiceGridProps) => {
+const ChoiceGrid = ({ 
+    choices, 
+    handleClick, 
+    correctAnswer, 
+    selectedChoice, 
+    flippedStates,
+    currentStep
+    }: ChoiceGridProps) => {
     
     return (
         <div className="grid grid-cols-2 gap-8 mt-4 h-full w-[400px]">
-            {data.test[0].choices.slice(0, 4).map((choice, index:number) => (
+            {choices.map((choice, index) => (
                 <button
                     key={index}
-                    onClick={() => handleClick(choice)}
+                    onClick={() => {
+                        handleClick(choice, index);
+                    }}
                     className={`p-4 text-white rounded-md shadow-md transition
                         ${
                             selectedChoice
@@ -30,7 +43,19 @@ const ChoiceGrid = ({ choices, handleClick, isCorrect, correctAnswer, selectedCh
                         }`}
                         disabled={!!selectedChoice}
                 >
-                    <ChoiceBox choice={choice} />
+                    <ChoiceBox 
+                        choice={choice} 
+                        description={
+                            selectedChoice
+                                ? choice === correctAnswer
+                                    ? data.test[currentStep].explanation
+                                    : choice in data.test[currentStep].wrong_explanations
+                                    ? data.test[currentStep].wrong_explanations[choice]
+                                    : "No explanation available"
+                                : ""
+                            }
+                        isFlipped={flippedStates[index]}                        
+                    />
                 </button>
             ))}
         </div>
