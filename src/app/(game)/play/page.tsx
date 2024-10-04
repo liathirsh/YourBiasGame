@@ -74,9 +74,9 @@ const Play = () => {
     
     return (
         <div>
-            <div className="h-screen flex flex-col items-center bg-black">
-                <div className="w-full max-w-[420px] mt-4 px-4 flex flex-col items-center">
-                    <div className="flex items-center justify-between">
+            <div className="h-screen flex flex-col items-center">
+                <div className="w-full responsive-container mt-4 px-4 flex flex-col items-center">
+                    <div className="flex items-center justify-between w-full">
                         <ProgressBar 
                             currentStep={currentStep} 
                             steps={steps}
@@ -87,10 +87,10 @@ const Play = () => {
                         </div>
                     </div>
                 </div>
-            <div className="h-[full] w-[500px] flex items-center justify-center mt-6">
+            <div className="w-full responsive-container flex items-center justify-center mt-6 px-4">
                 <QuestionBox question={currentQuestion.question} />
             </div>
-            <div className="flex-grow w-full flex justify-center">
+            <div className="flex-grow w-full responsive container flex justify-center">
                 <ChoiceGrid 
                     choices={currentQuestion.choices}
                     selectedChoice={selectedChoice}
@@ -98,7 +98,7 @@ const Play = () => {
                     flippedStates={flippedStates}
                 />
             </div>
-            <div className="w-full max-w-[420px] flex justify-end mb-4">
+            <div className="w-full responsive-container max-w-[420px] flex justify-end mb-4">
                 <NextButton onNext={handleNext} disabled={!selectedChoice}/>
             </div>
         </div>

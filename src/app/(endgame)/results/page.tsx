@@ -23,7 +23,7 @@ const ResultsPage = () => {
           <p className="text-lg mb-4">
             You scored <strong>{score}</strong> out of <strong>{total}</strong>!
           </p>
-          <p className="text-lg mb-8">That's a <strong>{percentage}%</strong> success rate.</p>
+          <p className="text-lg mb-8">That`&apos;`s a <strong>{percentage}%</strong> success rate.</p>
           
           <div className="w-full max-w-md bg-gray-950 p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-bold mb-4">How other players scored:</h2>

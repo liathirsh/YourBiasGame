@@ -7,7 +7,7 @@ import Link from "next/link";
 export const Tutorial = () => {
 
     return (
-        <Card className="border-0 w-[600px] h-[300px] p-8">
+        <Card className="border-0 w-full max-w-[600px] h-auto p-8 shadow-md">
             <CardHeader className="w-full px-0 pt-0">
                 How To Play
             </CardHeader>

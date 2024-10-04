@@ -36,8 +36,8 @@ const ChoiceBox = ({ choice, definition, isFlipped } : ChoiceBoxProps) => {
                 transform: "rotateY(0deg)",
               }}
             >
-              <Card className="w-full h-full p-8">
-                <CardTitle className="w-full px-0 pt-0 text-center">
+              <Card className="w-full h-full p-4 md:p-6 lg:p-8 flex items-center justify-center">
+                <CardTitle className="w-full text-sm md:text-base lg:text-lg px-0 pt-0 text-center">
                   {choice}
                 </CardTitle>
               </Card>
@@ -50,8 +50,8 @@ const ChoiceBox = ({ choice, definition, isFlipped } : ChoiceBoxProps) => {
                 transform: "rotateY(180deg)",
               }}
             >
-              <Card className="w-full h-full p-8">
-                <CardDescription className="w-full px-0 pt-0 text-center">
+              <Card className="w-full h-full p-4 md:p-6 lg:p-8 flex items-center justify-center">
+                <CardDescription className="w-full text-xs md:text-sm lg:text-base leading-snug md:leading-normal lg:leading-relaxed px-0 pt-0 text-center">
                   {definition}
                 </CardDescription>
               </Card>

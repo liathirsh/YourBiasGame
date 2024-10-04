@@ -9,7 +9,7 @@ body,
 }
 
 :root {
-  --background: #gray-950;
+  --background: #0f172a;
   --foreground: #171717;
 }
 
@@ -105,4 +105,8 @@ body {
 .relative {
   transform-style: preserve-3d;
   --webkit-transform-style: preserve-3d;
+}
+
+.responsive-container {
+  @apply w-full max-w-[420px] md:max-w-[600px] lg:max-w-[700px];
 }

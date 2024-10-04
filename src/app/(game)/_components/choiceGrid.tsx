@@ -11,12 +11,12 @@ interface ChoiceGridProps {
 
 const ChoiceGrid = ({ choices, selectedChoice, handleClick, flippedStates }: ChoiceGridProps) => {    
     return (
-        <div className="grid grid-cols-2 gap-2 mt-4 md:w-full md:h-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 md:w-full md:h-full">
             {choices.map((choice, index) => (
                 <button
                     key={index}
                     onClick={() => handleClick(choice, index)}
-                    className={`w-full h-full rounded-md shadow-md transition border-4
+                    className={`w-full h-full rounded-md shadow-md transition-transform duration-200 border-4 transform hover:scale-105
                         ${
                             selectedChoice
                                 ?
