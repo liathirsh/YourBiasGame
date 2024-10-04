@@ -6,7 +6,6 @@ import { StepInterface } from "@/types/steps"
 interface ProgressBarProps {
     currentStep: number;
     steps: StepInterface[]
-    isCorrect: boolean | null;
 }
 
 export const ProgressBar = ({ currentStep, steps }: ProgressBarProps ) => {
