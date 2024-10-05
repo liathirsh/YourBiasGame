@@ -1,6 +1,7 @@
 
 import ChoiceBox from "./choicebox";
 import { Choice } from "@/types/choice";
+import useMediaQuery from "@/app/hooks/useMediaQuery";
 
 interface ChoiceGridProps {
     choices: Choice[];
@@ -10,8 +11,10 @@ interface ChoiceGridProps {
 }
 
 const ChoiceGrid = ({ choices, selectedChoice, handleClick, flippedStates }: ChoiceGridProps) => {    
+    const isMobile = useMediaQuery('(max-width: 768px)');
+    
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 md:w-full md:h-full">
+        <div className={`grid ${isMobile ? "grid-cols-1": "grid-cols-2"} gap-2 md:gap-4 mt-4 w-full md:w-full md:h-full`}>
             {choices.map((choice, index) => (
                 <button
                     key={index}

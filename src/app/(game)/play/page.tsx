@@ -19,6 +19,7 @@ const Play = () => {
     const [flippedStates, setFlippedStates] = useState<boolean[]>(Array(4).fill(false));
     const [correctAnswers, setCorrectAnswers] = useState<number>(0);
     const [isQuizComplete, setIsQuizComplete] = useState<boolean>(false);
+    const [showMobilePopup, setShowMobilePopup] = useState<boolean>(false);
 
     const [steps, setSteps] = useState<StepInterface[]>(
         data.biasTest.map((_, index) => ({
@@ -29,6 +30,12 @@ const Play = () => {
       );
 
     const router = useRouter();
+
+      useEffect(() => {
+        if (typeof window !== "undefined") {
+            setShowMobilePopup(window.innerWidth < 376);
+        }
+    }, []);
 
     useEffect(() => {
         if (isQuizComplete) {
@@ -73,6 +80,16 @@ const Play = () => {
     const currentQuestion = data.biasTest[currentStep];
     
     return (
+    <div>
+        {showMobilePopup && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                <div className="bg-white rounded-lg p-8 max-w-sm text-center">
+                    <h2 className="text-xl font-semibold mb-4">Mobile View</h2>
+                    <p className="text-gray-600">Mobile is still in progress for some smaller screens. Please switch to a larger screent to play.</p>
+                </div>
+            </div>
+        )}
+        {!showMobilePopup && (
         <div>
             <div className="h-screen flex flex-col items-center">
                 <div className="w-full responsive-container mt-4 px-4 flex flex-col items-center">
@@ -102,6 +119,8 @@ const Play = () => {
                 <NextButton onNext={handleNext} disabled={!selectedChoice}/>
             </div>
         </div>
+    </div>
+    )}
     </div>
     );   
 };
