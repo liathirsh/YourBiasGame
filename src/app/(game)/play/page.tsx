@@ -9,7 +9,6 @@ import { ProgressBar } from "../_components/progressbar";
 
 import data from "../_data/data.json";
 
-// import { Settings, CircleHelp } from "lucide-react";
 import { StepInterface } from "@/types/steps";
 import { Choice } from "@/types/choice";
 
@@ -98,10 +97,6 @@ const Play = () => {
                             currentStep={currentStep} 
                             steps={steps}
                         />
-                        {/* <div className="flex items-center">
-                            <Settings className="w-6 h-6 text-[#B9D6F2] ml-6 cursor-pointer"/>
-                            <CircleHelp className="w-6 h-6 text-[#B9D6F2] ml-2 cursor-pointer"/>
-                        </div> */}
                     </div>
                 </div>
             <div className="w-full responsive-container flex items-center justify-center mt-6 px-4">

@@ -47,10 +47,10 @@ const ChoiceBox = ({ choice, definition, isFlipped } : ChoiceBoxProps) => {
               <Card className={`w-full h-full flex items-center justify-center"
                 ${ 
                   isSmallScreen
-                  ? "text-sm py-4"
+                  ? "text-xs py-2"
                   : isMobile
-                  ? "text-sm md:p-6 lg-p-8"
-                  : "text-base p-6 lg:text-base 8"
+                  ? "text-sm p-4"
+                  : "text-lg p-8"
                 }`}
                 >
                 <CardTitle className="w-full px-0 pt-1 text-center">
