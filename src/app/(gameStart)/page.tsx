@@ -12,9 +12,8 @@ const GameStart = () => {
         <div>
             {showIntroPage ? (
                 <Welcome 
-                    showIntroPage={showIntroPage}
                     setShowIntroPage={setShowIntroPage}
-                    />
+                />
             ) : (
                 <Tutorial />
             )}

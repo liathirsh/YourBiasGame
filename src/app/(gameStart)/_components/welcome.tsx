@@ -7,7 +7,7 @@ interface WelcomeProps {
     setShowIntroPage: (value: boolean) => void;
 }
 
-const Welcome = ({setShowIntroPage} : WelcomeProps) => {
+const Welcome = ({ setShowIntroPage } : WelcomeProps) => {
 
     const handleClick = () => {
         setShowIntroPage(false);
