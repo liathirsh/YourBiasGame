@@ -9,7 +9,7 @@ import { ProgressBar } from "../_components/progressbar";
 
 import data from "../_data/data.json";
 
-import { Settings, CircleHelp } from "lucide-react";
+// import { Settings, CircleHelp } from "lucide-react";
 import { StepInterface } from "@/types/steps";
 import { Choice } from "@/types/choice";
 

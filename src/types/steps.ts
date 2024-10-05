@@ -1,6 +1,6 @@
 
 export interface StepInterface {
     name: string;
-    href?: string;
+    href: string;
     status: 'complete' | 'current' | 'upcoming' | 'incorrect'
 }

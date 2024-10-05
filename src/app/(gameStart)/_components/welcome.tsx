@@ -4,11 +4,10 @@ import { Button } from "@/components/ui/button"
 
 
 interface WelcomeProps {
-    showIntroPage: boolean;
     setShowIntroPage: (value: boolean) => void;
 }
 
-const Welcome = ({ showIntroPage, setShowIntroPage} : WelcomeProps) => {
+const Welcome = ({setShowIntroPage} : WelcomeProps) => {
 
     const handleClick = () => {
         setShowIntroPage(false);

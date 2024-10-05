@@ -26,7 +26,7 @@ const ChoiceBox = ({ choice, definition, isFlipped } : ChoiceBoxProps) => {
     const transform = rotation.to((r) => `rotateY(${r}deg)`);
     
     return (
-        <div
+        <animated.div
           className="relative w-full h-full"
           style={{ height, perspective: "1000px" }}
         >
@@ -50,7 +50,7 @@ const ChoiceBox = ({ choice, definition, isFlipped } : ChoiceBoxProps) => {
                   ? "text-sm py-4"
                   : isMobile
                   ? "text-sm md:p-6 lg-p-8"
-                  : "text-base p-6"
+                  : "text-base p-6 lg:text-base 8"
                 }`}
                 >
                 <CardTitle className="w-full px-0 pt-1 text-center">
@@ -73,7 +73,7 @@ const ChoiceBox = ({ choice, definition, isFlipped } : ChoiceBoxProps) => {
               </Card>
             </animated.div>
           </animated.div>
-        </div>
+        </animated.div>
     );
 };
     
