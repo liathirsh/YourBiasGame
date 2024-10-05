@@ -76,15 +76,15 @@ const Play = () => {
         <div>
             <div className="h-screen flex flex-col items-center">
                 <div className="w-full responsive-container mt-4 px-4 flex flex-col items-center">
-                    <div className="flex items-center justify-between w-full">
+                    <div className="flex flex-col md:flex-row items-center justify-center w-full">
                         <ProgressBar 
                             currentStep={currentStep} 
                             steps={steps}
                         />
-                        <div className="flex items-center">
+                        {/* <div className="flex items-center">
                             <Settings className="w-6 h-6 text-[#B9D6F2] ml-6 cursor-pointer"/>
                             <CircleHelp className="w-6 h-6 text-[#B9D6F2] ml-2 cursor-pointer"/>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             <div className="w-full responsive-container flex items-center justify-center mt-6 px-4">

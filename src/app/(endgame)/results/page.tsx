@@ -9,23 +9,23 @@ const ResultsPage = () => {
 
     const percentage = ((score / total) * 100).toFixed(0);
 
-    const stats = [
-        {range: "4 (Perfect!)", percent : "100"},
-        {range: "3-4", percent : "75"},
-        {range: "2-3", percent : "50"},
-        {range: "1-2", percent : "25"},
-        {range: "0-1", percent : "0"}
-    ]
+    // const stats = [
+    //     {range: "4 (Perfect!)", percent : "100"},
+    //     {range: "3-4", percent : "75"},
+    //     {range: "2-3", percent : "50"},
+    //     {range: "1-2", percent : "25"},
+    //     {range: "0-1", percent : "0"}
+    // ]
 
     return (
-        <div className="h-screen flex flex-col items-center justify-center bg-gray-950">
+        <div className="h-screen flex flex-col items-center justify-center">
           <h1 className="text-3xl font-bold mb-6">Game Results</h1>
           <p className="text-lg mb-4">
             You scored <strong>{score}</strong> out of <strong>{total}</strong>!
           </p>
-          <p className="text-lg mb-8">That`&apos;`s a <strong>{percentage}%</strong> success rate.</p>
+          <p className="text-lg mb-8">That&apos;s a <strong>{percentage}%</strong> success rate.</p>
           
-          <div className="w-full max-w-md bg-gray-950 p-6 rounded-lg shadow-md">
+          {/* <div className="w-full max-w-md bg-gray-950 p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-bold mb-4">How other players scored:</h2>
             <table className="w-full border-collapse">
               <thead>
@@ -42,8 +42,8 @@ const ResultsPage = () => {
                   </tr>
                 ))}
               </tbody>
-            </table>
-          </div>
+            </table> */}
+          {/* </div> */}
         </div>
       );
     };

@@ -51,7 +51,7 @@ const ChoiceBox = ({ choice, definition, isFlipped } : ChoiceBoxProps) => {
               }}
             >
               <Card className="w-full h-full p-4 md:p-6 lg:p-8 flex items-center justify-center">
-                <CardDescription className="w-full text-xs md:text-sm lg:text-base leading-snug md:leading-normal lg:leading-relaxed px-0 pt-0 text-center">
+                <CardDescription className="w-full text-xs md:text-sm lg:text-base leading-tight md:leading-tight lg:leading-normal px-0 pt-0 text-center">
                   {definition}
                 </CardDescription>
               </Card>
