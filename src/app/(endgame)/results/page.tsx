@@ -1,6 +1,8 @@
 "use client";
 
 import { useSearchParams } from 'next/navigation';
+import { Button } from '@/components/ui/button';
+import  Link from 'next/link';
 
 const ResultsPage = () => {
     const searchParams = useSearchParams();
@@ -27,7 +29,14 @@ const ResultsPage = () => {
           {score === 4 ? (
             <p className="text-lg mb-8 text-gray-200">You got a perfect score! You know your biases!</p>
           ) : (
-            <p className="text-lg mb-8 text-gray-200"> Play again to learn about those biases!</p>  
+            <>
+              <p className="text-lg mb-8 text-gray-200">Play again to learn about those biases!</p>
+                <Button asChild>
+                  <Link href="/">
+                    Play Again
+                  </Link>
+                </Button>
+            </>
           )}
 
           {/* <div className="w-full max-w-md bg-gray-950 p-6 rounded-lg shadow-md">
