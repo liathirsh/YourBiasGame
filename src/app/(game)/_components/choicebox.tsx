@@ -13,10 +13,10 @@ const ChoiceBox = ({ choice, definition, isFlipped } : ChoiceBoxProps) => {
     const isMobile = useMediaQuery('(max-width: 768px)');
     const isSmallScreen = useMediaQuery('(max-width: 390px)');
 
-    const { height } = useSpring({
-      height: isSmallScreen ? "120px" : isMobile ? "80px" : "150px",
-      config: { mass: 5, tension: 280, friction: 30 },
-    });
+    // const { height } = useSpring({
+    //   height: isSmallScreen ? "120px" : isMobile ? "80px" : "150px",
+    //   config: { mass: 5, tension: 280, friction: 30 },
+    // });
   
     const { rotation } = useSpring({
         rotation: isFlipped ? 180 : 0,
@@ -28,7 +28,7 @@ const ChoiceBox = ({ choice, definition, isFlipped } : ChoiceBoxProps) => {
     return (
         <animated.div
           className="relative w-full h-full"
-          style={{ height, perspective: "1000px" }}
+          style={{ perspective: "1000px" }}
         >
           <animated.div
             className="absolute w-full h-full"
