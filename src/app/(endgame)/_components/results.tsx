@@ -18,17 +18,17 @@ const Results = () => {
     // ]
 
     return (
-        <div className="h-screen flex flex-col items-center justify-center">
-          <h1 className="text-3xl font-bold mb-6 text-gray-200">Game Results</h1>
-          <p className="text-lg mb-4 text-gray-200">
-            You scored <strong>{score}</strong> out of <strong>{total}</strong>!
+        <div className="h-screen flex flex-col items-center justify-center bg-background">
+          <h1 className="text-3xl font-bold mb-6 text-primary">Game Results</h1>
+          <p className="text-lg mb-4 text-primary">
+            You scored <strong className="text-success">{score}</strong> out of <strong>{total}</strong>!
           </p>
-          <p className="text-lg mb-8 text-gray-200">That&apos;s a <strong>{percentage}%</strong> success rate.</p>
+          <p className="text-lg mb-8 text-primary">That&apos;s a <strong>{percentage}%</strong> success rate.</p>
           {score === 4 ? (
-            <p className="text-lg mb-8 text-gray-200">You got a perfect score! You know your biases!</p>
+            <p className="text-lg mb-8 text-success">You got a perfect score! You know your biases!</p>
           ) : (
             <>
-              <p className="text-lg mb-8 text-gray-200">Play again to learn about those biases!</p>
+              <p className="text-lg mb-8 text-primary">Play again to learn about those biases!</p>
                 <Button asChild>
                   <Link href="/">
                     Play Again

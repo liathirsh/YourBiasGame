@@ -81,16 +81,16 @@ const Play = () => {
     return (
     <div>
         {showMobilePopup && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                <div className="bg-white rounded-lg p-8 max-w-sm text-center">
-                    <h2 className="text-xl font-semibold mb-4">Mobile View</h2>
-                    <p className="text-gray-600">Mobile is still in progress for some smaller screens. Please switch to a larger screent to play.</p>
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-50">
+                <div className="bg-card rounded-lg p-8 max-w-sm text-center border border-border">
+                    <h2 className="text-xl font-semibold mb-4 text-primary">Mobile View</h2>
+                    <p className="text-neutral-foreground">Mobile is still in progress for some smaller screens. Please switch to a larger screent to play.</p>
                 </div>
             </div>
         )}
         {!showMobilePopup && (
         <div>
-            <div className="h-screen flex flex-col items-center">
+            <div className="h-screen flex flex-col items-center ">
                 <div className="w-full responsive-container mt-4 px-4 flex flex-col items-center">
                     <div className="flex flex-col md:flex-row items-center justify-center w-full">
                         <ProgressBar 
