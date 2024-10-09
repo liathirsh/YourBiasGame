@@ -30,6 +30,12 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .text-foreground {
+    color: var(--foreground);
+  }
+  .bg-background {
+    background-color: var(--background);
+  }
 }
 
 @layer base {

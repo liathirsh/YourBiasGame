@@ -12,11 +12,6 @@ export interface ChoiceBoxProps {
 const ChoiceBox = ({ choice, definition, isFlipped } : ChoiceBoxProps) => {
     const isMobile = useMediaQuery('(max-width: 768px)');
     const isSmallScreen = useMediaQuery('(max-width: 390px)');
-
-    // const { height } = useSpring({
-    //   height: isSmallScreen ? "120px" : isMobile ? "80px" : "150px",
-    //   config: { mass: 5, tension: 280, friction: 30 },
-    // });
   
     const { rotation } = useSpring({
         rotation: isFlipped ? 180 : 0,
@@ -44,7 +39,7 @@ const ChoiceBox = ({ choice, definition, isFlipped } : ChoiceBoxProps) => {
                 transform: "rotateY(0deg)",
               }}
             >
-              <Card className={`w-full h-full flex items-center justify-center"
+              <Card className={`w-full h-full flex items-center justify-center bg-card border border-border shadow-sm rounded-lg"
                 ${ 
                   isSmallScreen
                   ? "text-xs py-2"
@@ -53,7 +48,7 @@ const ChoiceBox = ({ choice, definition, isFlipped } : ChoiceBoxProps) => {
                   : "text-lg p-8"
                 }`}
                 >
-                <CardTitle className="w-full px-0 pt-1 text-center">
+                <CardTitle className="w-full px-0 pt-1 text-center text-foreground">
                   {choice}
                 </CardTitle>
               </Card>
@@ -66,8 +61,8 @@ const ChoiceBox = ({ choice, definition, isFlipped } : ChoiceBoxProps) => {
                 transform: "rotateY(180deg)",
               }}
             >
-              <Card className="w-full h-full flex items-center justify-center">
-                <CardDescription className="w-full text-xs md:text-sm lg:text-base leading-tight md:leading-tight lg:leading-normal px-0 pt-4 text-center">
+              <Card className="w-full h-full flex items-center justify-center bg-muted border border-border shadow-sm rounded-lg">
+                <CardDescription className="w-full text-xs md:text-sm lg:text-base leading-tight md:leading-tight lg:leading-normal px-0 pt-4 text-center text-muted-foreground">
                   {definition}
                 </CardDescription>
               </Card>

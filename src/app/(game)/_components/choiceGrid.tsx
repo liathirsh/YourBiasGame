@@ -24,9 +24,10 @@ const ChoiceGrid = ({ choices, selectedChoice, handleClick, flippedStates }: Cho
                             selectedChoice
                                 ?
                                 choice.isCorrect
-                                    ? 'bg-green-600 border-green-600'
-                                    : 'bg-red-600 border-red-600'
-                                : 'bg-[#006DAA] hover:bg-[#003559] hover:border-[#003559]'
+                                    ? 'bg-success border-success hover:bg-success-hover'
+                                    : 'bg-destructive border-destructive hover:bg-destructive-hover'
+                                : 'bg-primary hover:primary hover:bg-primary-hover hover:border-primary-hover'
+
                         }`}
                         disabled={false}
                 >
