@@ -7,10 +7,13 @@ import QuestionBox from "../_components/questionbox";
 import NextButton from "../_components/nextButton";
 import { ProgressBar } from "../_components/progressbar";
 
+import { Settings, CircleHelp } from "lucide-react";
+
 import data from "../_data/data.json";
 
 import { StepInterface } from "@/types/steps";
 import { Choice } from "@/types/choice";
+import HelpPopUp from "@/components/ui/helppopup";
 
 const Play = () => {
     const [selectedChoice, setSelectedChoice] = useState<Choice | null>(null);
@@ -19,6 +22,7 @@ const Play = () => {
     const [correctAnswers, setCorrectAnswers] = useState<number>(0);
     const [isQuizComplete, setIsQuizComplete] = useState<boolean>(false);
     const [showMobilePopup, setShowMobilePopup] = useState<boolean>(false);
+    const [showHelp, setShowHelp] = useState<boolean>(false);
 
     const [steps, setSteps] = useState<StepInterface[]>(
         data.biasTest.map((_, index) => ({
@@ -90,13 +94,18 @@ const Play = () => {
         )}
         {!showMobilePopup && (
         <div>
-            <div className="h-screen flex flex-col items-center ">
+            <div className="h-screen flex flex-col items-center">
                 <div className="w-full responsive-container mt-4 px-4 flex flex-col items-center">
                     <div className="flex flex-col md:flex-row items-center justify-center w-full">
                         <ProgressBar 
                             currentStep={currentStep} 
                             steps={steps}
                         />
+                        <div className="flex items-center sm:space-x-2 md:space-x-4">
+                            <Settings className="w-6 h-6 text-primary ml-6 cursor-pointer"/>
+                            <CircleHelp onClick={()=>setShowHelp(prev => !prev)} className="w-6 h-6 text-primary cursor-pointer z-20" />
+                            {showHelp && <HelpPopUp show={showHelp} setShow={setShowHelp} />}
+                        </div>
                     </div>
                 </div>
             <div className="w-full responsive-container flex items-center justify-center mt-6 px-4">
