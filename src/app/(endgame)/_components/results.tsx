@@ -18,7 +18,7 @@ const Results = () => {
     // ]
 
     return (
-        <div className="h-screen flex flex-col items-center justify-center bg-background">
+        <div className="flex flex-col items-center justify-center bg-background z-20 px-12 py-16 rounded">
           <h1 className="text-3xl font-bold mb-6 text-primary">Game Results</h1>
           <p className="text-lg mb-4 text-primary">
             You scored <strong className="text-success">{score}</strong> out of <strong>{total}</strong>!

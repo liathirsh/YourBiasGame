@@ -16,8 +16,10 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // Colors consistent with what you are already using
-        background: "#F7F7FB", // Light pastel background
+        background: 'var(--background)',
+		foreground: 'var(--foreground)',
+		card: 'var(--card)', 
+		'card-foreground': 'var(--card-foreground)',
         success: {
           DEFAULT: "#C1F0DC", // Light pastel green for success state
           hover: "#A3E4C4", // Hover state for success
@@ -29,7 +31,7 @@ const config: Config = {
           border: "#EFA9A4", // Border color for destructive state
         },
         primary: {
-          DEFAULT: "#C3DDFD", // Light pastel blue for primary
+          DEFAULT: "#4e99f5", // Light pastel blue for primary
           hover: "#AFC7F3", // Hover state for primary
           border: "#AFC7F3", // Border color for primary state
         },
