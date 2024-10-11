@@ -18,38 +18,38 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
 		foreground: 'var(--foreground)',
-		card: 'var(--card)', 
-		'card-foreground': 'var(--card-foreground)',
+		card: {
+			DEFAULT: 'var(--card)', 
+			foreground: 'var(--card-foreground)',
+			bg: "#FFFFFF",
+			text: "#171717",
+		},
         success: {
-          DEFAULT: "#C1F0DC", // Light pastel green for success state
-          hover: "#A3E4C4", // Hover state for success
-          border: "#A3E4C4", // Border color for success state
-        },
+          DEFAULT: "#C1F0DC",
+          hover: "#A3E4C4",
+          border: "#A3E4C4",
+		},
         destructive: {
-          DEFAULT: "#F4C7C3", // Light pastel red for incorrect answers
-          hover: "#EFA9A4", // Hover state for destructive
-          border: "#EFA9A4", // Border color for destructive state
+          DEFAULT: "#F4C7C3",
+          hover: "#EFA9A4",
+          border: "#EFA9A4",
         },
         primary: {
-          DEFAULT: "#4e99f5", // Light pastel blue for primary
-          hover: "#AFC7F3", // Hover state for primary
-          border: "#AFC7F3", // Border color for primary state
-        },
-        card: {
-          DEFAULT: "#FFFFFF", // White for card background
-          foreground: "#171717", // Text color for card content
+          DEFAULT: "#4e99f5",
+          hover: "#AFC7F3",
+          border: "#AFC7F3",
         },
         muted: {
-          DEFAULT: "#E5E7EB", // Light muted color
-          foreground: "#6B7280", // Muted text color
+          DEFAULT: "#E5E7EB",
+          foreground: "#6B7280",
         },
         accent: {
-          DEFAULT: "#F9A8D4", // Accent color
-          foreground: "#831843", // Accent text color
+          DEFAULT: "#F9A8D4", 
+          foreground: "#831843",
         },
-        border: "#D1D5DB", // Default border color
-        input: "#F3F4F6", // Input background color
-        ring: "#E0E7FF", // Ring color
+        border: "#D1D5DB", 
+        input: "#F3F4F6",
+        ring: "#E0E7FF",
       },
       borderRadius: {
         lg: "var(--radius)",
