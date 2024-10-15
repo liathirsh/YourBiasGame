@@ -13,7 +13,7 @@ const EndGameLayout = ({ children }: {children: React.ReactNode}) => {
                     className="absolute inset-0 w-full h-full object-cover opacity-10"
                     />
             </div>
-            <div className="relative z-10 flex flex-col items-center justify-center max-w-lg w-full bg-background/80 px-12 py-16 m-4 rounded-lg shadow-md">
+            <div className="relative z-10 flex flex-col items-center justify-center max-w-lg w-full bg-card/80 px-12 py-16 m-4 rounded-lg shadow-md">
                 {children}
             </div>           
         </div>

@@ -7,6 +7,7 @@ export interface ChoiceBoxProps {
   choice: string;
   definition: string;
   isFlipped: boolean;
+  mode: 'easy' | 'hard';
 }
 
 const ChoiceBox = ({ choice, definition, isFlipped } : ChoiceBoxProps) => {

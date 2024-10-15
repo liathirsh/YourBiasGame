@@ -6,14 +6,16 @@ import ChoiceGrid from "../_components/choiceGrid";
 import QuestionBox from "../_components/questionbox";
 import NextButton from "../_components/nextButton";
 import { ProgressBar } from "../_components/progressbar";
-
-import { Settings, CircleHelp } from "lucide-react";
+import HelpPopUp from "@/components/ui/helppopup";
+import SettingsButton from "../_components/settingsbutton";
+  
+import { CircleHelp } from "lucide-react";
 
 import data from "../_data/data.json";
 
 import { StepInterface } from "@/types/steps";
 import { Choice } from "@/types/choice";
-import HelpPopUp from "@/components/ui/helppopup";
+
 
 const Play = () => {
     const [selectedChoice, setSelectedChoice] = useState<Choice | null>(null);
@@ -23,6 +25,7 @@ const Play = () => {
     const [isQuizComplete, setIsQuizComplete] = useState<boolean>(false);
     const [showMobilePopup, setShowMobilePopup] = useState<boolean>(false);
     const [showHelp, setShowHelp] = useState<boolean>(false);
+    const [mode, setMode] = useState<'easy'| 'hard'>('easy');
 
     const [steps, setSteps] = useState<StepInterface[]>(
         data.biasTest.map((_, index) => ({
@@ -33,6 +36,10 @@ const Play = () => {
       );
 
     const router = useRouter();
+
+    const resetFlippedStates = () => {
+        setFlippedStates(Array(4).fill(false));
+    };
 
       useEffect(() => {
         if (typeof window !== "undefined") {
@@ -57,17 +64,18 @@ const Play = () => {
             }
             setCurrentStep((prevStep) => Math.min(prevStep + 1, data.biasTest.length - 1));
             setSelectedChoice(null);
-            setFlippedStates(Array(4).fill(false));
+            resetFlippedStates();
         };
     };
 
-    const handleClick = (choice: Choice, index: number) => {
-        
+    const handleFlip = (index:number) => {
         const updatedFlippedStates = [...flippedStates]
         updatedFlippedStates[index] = !updatedFlippedStates[index];
         setFlippedStates(updatedFlippedStates);
-        
-        if (!selectedChoice) {
+    };
+
+    const handleClick = (choice: Choice, index: number) => {
+        if (mode === 'hard') {
             setSelectedChoice(choice);
 
             const newSteps = [...steps];
@@ -77,8 +85,21 @@ const Play = () => {
                 newSteps[currentStep].status = "incorrect";
             }
             setSteps(newSteps);
-        }
+        } handleFlip(index);
     };
+
+    const confirmChoice = (choice:Choice) => {
+        setSelectedChoice(choice);
+
+        const newSteps = [...steps];
+        if (choice.isCorrect) {
+            newSteps[currentStep].status = "complete";
+        } else {
+            newSteps[currentStep].status = "incorrect";
+        }
+        setSteps(newSteps);
+        resetFlippedStates();
+    }
 
     const currentQuestion = data.biasTest[currentStep];
     
@@ -102,7 +123,7 @@ const Play = () => {
                             steps={steps}
                         />
                         <div className="flex items-center sm:space-x-2 md:space-x-4">
-                            <Settings className="w-6 h-6 text-primary ml-6 cursor-pointer"/>
+                            <SettingsButton currentMode={mode} setMode={setMode} />
                             <CircleHelp onClick={()=>setShowHelp(prev => !prev)} className="w-6 h-6 text-primary cursor-pointer z-20" />
                             {showHelp && <HelpPopUp show={showHelp} setShow={setShowHelp} />}
                         </div>
@@ -117,6 +138,8 @@ const Play = () => {
                     selectedChoice={selectedChoice}
                     handleClick={handleClick}
                     flippedStates={flippedStates}
+                    mode={mode}
+                    confirmChoice={confirmChoice}
                 />
             </div>
             <div className="w-full responsive-container max-w-[420px] flex justify-end mb-4">
