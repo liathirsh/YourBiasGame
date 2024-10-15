@@ -10,7 +10,7 @@ const QuestionBox = ({ question } : questionType) => {
     const isSmallScreen = useMediaQuery('(max-width: 390px)');
 
     return (
-        <Card className={`border border-border bg-card bg-opacity-100 text-card-foreground z-20 shadow-sm w-full h-full rounded-lg ${isSmallScreen ? "p-4" : isMobile ? "p-6" : "p-8"}
+        <Card className={`border border-border bg-card bg-opacity-100 text-card-foreground z-10 shadow-sm w-full h-full rounded-lg ${isSmallScreen ? "p-4" : isMobile ? "p-6" : "p-8"}
                 ${isSmallScreen ? "text-xs" : isMobile ? "text-sm" : "text-base"}`}
         >
             <CardHeader 
