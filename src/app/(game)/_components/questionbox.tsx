@@ -1,11 +1,9 @@
 import { Card, CardHeader } from "@/components/ui/card";
+import { useQuizContext } from "@/contexts/QuizContext";
 import useMediaQuery from "@/app/hooks/useMediaQuery";
 
-interface questionType {
-    question: string;
-}
-
-const QuestionBox = ({ question } : questionType) => {
+const QuestionBox = () => {
+    const { currentQuestion } = useQuizContext();
     const isMobile = useMediaQuery('(max-width: 768px)');
     const isSmallScreen = useMediaQuery('(max-width: 390px)');
 
@@ -18,7 +16,7 @@ const QuestionBox = ({ question } : questionType) => {
                     isSmallScreen ? "leading-tight" : "leading-normal"} 
                     ${isSmallScreen ? "h-full" : ""}`}
             >
-                {question}
+                {currentQuestion.question}
             </CardHeader>
         </Card>
     )
