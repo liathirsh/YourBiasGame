@@ -1,32 +1,40 @@
 
+import { useCallback, useEffect } from "react";
+import { useQuizContext } from "@/contexts/QuizContext";
+import { useUiContext } from "@/contexts/UiContext";
 import ChoiceBox from "./choicebox";
-import { Choice } from "@/types/choice";
 import useMediaQuery from "@/app/hooks/useMediaQuery";
+import { Choice } from "@/types/choice";
 
-interface ChoiceGridProps {
-    choices: Choice[];
-    selectedChoice: Choice | null;
-    handleClick: (choice: Choice, index: number) => void;
-    flippedStates: boolean[];
-    mode: 'easy' | 'hard';
-    confirmChoice: (choice:Choice)=>void;
-}
+const ChoiceGrid = () => {
+   const { currentQuestion, setChoice, state } = useQuizContext();
+   const { uiState, flippedStates, handleFlip, resetFlippedStates } = useUiContext();
+   const isMobile = useMediaQuery('(max-width: 768px)');
 
-const ChoiceGrid = ({ choices, selectedChoice, handleClick, flippedStates, mode, confirmChoice }: ChoiceGridProps) => {    
-    const isMobile = useMediaQuery('(max-width: 768px)');
+   const selectedChoice = state.selectedChoice;
+   const mode = uiState.mode;
+
+   useEffect(()=> {
+    resetFlippedStates(currentQuestion.choices.length);
+   }, [currentQuestion, resetFlippedStates]);
+   
     
-    const handleChoiceClick = (choice: Choice, index: number) => {
-        if (mode === 'hard'){
-            handleClick(choice, index)
+    const handleChoiceClick = useCallback(
+        (choice: Choice, index: number) => {
+        if (uiState.mode === 'hard'){
+            setChoice(choice);
+            handleFlip(index);
         } else {
-            handleClick(choice, index)
+            handleFlip(index);
         }
-    };
+    },
+        [uiState.mode, setChoice, handleFlip]
+    );
 
     return (
         <div className="flex flex-col items-center w-full">
             <div className={`grid ${isMobile ? "grid-cols-1": "grid-cols-2"} gap-2 md:gap-4 mt-4 w-full md:w-full md:h-full`}>
-                {choices.map((choice, index) => (
+                {currentQuestion.choices.map((choice, index) => (
                     <div key={index} className="w-full h-full">
                     <button
                         onClick={() => handleChoiceClick(choice, index)}
@@ -47,7 +55,6 @@ const ChoiceGrid = ({ choices, selectedChoice, handleClick, flippedStates, mode,
                         choice={choice.option}
                         definition={choice.definition}
                         isFlipped={flippedStates[index]}
-                        mode={mode}
                         />
                     </div>
                 </button>
@@ -60,7 +67,7 @@ const ChoiceGrid = ({ choices, selectedChoice, handleClick, flippedStates, mode,
             onClick={() => {
                 const flippedIndex = flippedStates.findIndex((isFlipped) => isFlipped);
                 if (flippedIndex !== -1) {
-                    confirmChoice(choices[flippedIndex]);
+                    setChoice(currentQuestion.choices[flippedIndex]);
                 }
             }}
             className="mt-4 bg-primary text-white py-2 px-4 rounded-md z-20"
